@@ -18,6 +18,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				display: ['Caveat', 'cursive'],
+				serif: ['"Cormorant Garamond"', 'serif'],
+				body: ['Comfortaa', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -70,25 +75,62 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'scale-in': {
+					'0%': { opacity: '0', transform: 'scale(0.9)' },
+					'100%': { opacity: '1', transform: 'scale(1)' }
+				},
+				'float-up': {
+					'0%': { transform: 'translateY(0) rotate(0deg)', opacity: '0' },
+					'10%': { opacity: '0.9' },
+					'90%': { opacity: '0.9' },
+					'100%': { transform: 'translateY(-110vh) rotate(8deg)', opacity: '0' }
+				},
+				'flutter': {
+					'0%': { transform: 'translate(0,0) rotate(0deg)' },
+					'25%': { transform: 'translate(30px,-25px) rotate(8deg)' },
+					'50%': { transform: 'translate(60px,10px) rotate(-6deg)' },
+					'75%': { transform: 'translate(25px,30px) rotate(5deg)' },
+					'100%': { transform: 'translate(0,0) rotate(0deg)' }
+				},
+				'drift': {
+					'0%': { transform: 'translateX(-120px)' },
+					'100%': { transform: 'translateX(110vw)' }
+				},
+				'twinkle': {
+					'0%,100%': { opacity: '0', transform: 'scale(0.5)' },
+					'50%': { opacity: '1', transform: 'scale(1)' }
+				},
+				'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'soft-bob': {
+					'0%,100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-12px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.8s ease-out forwards',
+				'scale-in': 'scale-in 0.6s ease-out forwards',
+				'float-up': 'float-up 12s linear infinite',
+				'flutter': 'flutter 9s ease-in-out infinite',
+				'drift': 'drift 40s linear infinite',
+				'twinkle': 'twinkle 3s ease-in-out infinite',
+				'spin-slow': 'spin-slow 30s linear infinite',
+				'soft-bob': 'soft-bob 4s ease-in-out infinite'
 			}
 		}
 	},

@@ -4,35 +4,37 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 30 50% 98%;
+    --foreground: 320 25% 30%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 320 25% 30%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 320 25% 30%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 340 60% 72%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 270 45% 88%;
+    --secondary-foreground: 320 25% 30%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 30 40% 94%;
+    --muted-foreground: 320 12% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 40 70% 75%;
+    --accent-foreground: 320 25% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 340 30% 90%;
+    --input: 340 30% 90%;
+    --ring: 340 60% 72%;
 
-    --radius: 0.5rem;
+    --radius: 1.25rem;
+
+    --gold: 40 70% 60%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -96,6 +98,32 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
   }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 20px 50px -20px hsla(340, 60%, 60%, 0.25);
+  }
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  .gold-grad {
+    background: linear-gradient(135deg, #f6d98a, #e3b04b, #f6d98a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .scroll-smooth-section {
+    scroll-margin-top: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
