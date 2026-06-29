@@ -112,6 +112,73 @@ export const Balloons = ({ count = 8 }: { count?: number }) => {
   );
 };
 
+export const Fireflies = ({ count = 18 }: { count?: number }) => {
+  const items = useMemo(
+    () =>
+      Array.from({ length: count }).map(() => ({
+        left: rand(0, 100),
+        top: rand(0, 100),
+        size: rand(3, 7),
+        delay: rand(0, 6),
+        dur: rand(5, 9),
+      })),
+    [count],
+  );
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      {items.map((f, i) => (
+        <span
+          key={i}
+          className="absolute rounded-full animate-firefly"
+          style={{
+            left: `${f.left}%`,
+            top: `${f.top}%`,
+            width: f.size,
+            height: f.size,
+            background: 'radial-gradient(circle,#fff7cc,#f6d98a)',
+            boxShadow: '0 0 8px 2px #f6d98a',
+            animationDelay: `${f.delay}s`,
+            animationDuration: `${f.dur}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
+export const HeartBurst = () => {
+  const items = useMemo(
+    () =>
+      Array.from({ length: 14 }).map(() => ({
+        left: rand(20, 80),
+        size: rand(16, 32),
+        delay: rand(0, 0.8),
+        dur: rand(1.6, 2.4),
+        hue: ['#f6a5c0', '#f7d6e0', '#e9d5f5', '#f9c79a'][Math.floor(rand(0, 4))],
+      })),
+    [],
+  );
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      {items.map((hb, i) => (
+        <Icon
+          key={i}
+          name="Heart"
+          className="absolute bottom-10 animate-heart-burst"
+          style={{
+            left: `${hb.left}%`,
+            width: hb.size,
+            height: hb.size,
+            color: hb.hue,
+            animationDelay: `${hb.delay}s`,
+            animationDuration: `${hb.dur}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
 export const Clouds = () => {
   const items = useMemo(
     () =>

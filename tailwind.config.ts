@@ -118,6 +118,29 @@ export default {
 				'soft-bob': {
 					'0%,100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-12px)' }
+				},
+				'blur-reveal': {
+					'0%': { opacity: '0', filter: 'blur(14px)', transform: 'translateY(24px)' },
+					'100%': { opacity: '1', filter: 'blur(0)', transform: 'translateY(0)' }
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-200% center' },
+					'100%': { backgroundPosition: '200% center' }
+				},
+				'heart-burst': {
+					'0%': { transform: 'translateY(0) scale(0.4)', opacity: '0' },
+					'15%': { opacity: '1' },
+					'100%': { transform: 'translateY(-160px) scale(1.1)', opacity: '0' }
+				},
+				'firefly': {
+					'0%,100%': { opacity: '0', transform: 'translate(0,0) scale(0.6)' },
+					'25%': { opacity: '1' },
+					'50%': { opacity: '0.4', transform: 'translate(20px,-30px) scale(1)' },
+					'75%': { opacity: '1', transform: 'translate(-15px,-15px) scale(0.8)' }
+				},
+				'garland-glow': {
+					'0%,100%': { opacity: '0.45', filter: 'drop-shadow(0 0 4px currentColor)' },
+					'50%': { opacity: '1', filter: 'drop-shadow(0 0 10px currentColor)' }
 				}
 			},
 			animation: {
@@ -130,7 +153,12 @@ export default {
 				'drift': 'drift 40s linear infinite',
 				'twinkle': 'twinkle 3s ease-in-out infinite',
 				'spin-slow': 'spin-slow 30s linear infinite',
-				'soft-bob': 'soft-bob 4s ease-in-out infinite'
+				'soft-bob': 'soft-bob 4s ease-in-out infinite',
+				'blur-reveal': 'blur-reveal 1.2s cubic-bezier(0.2,0.8,0.2,1) forwards',
+				'shimmer': 'shimmer 6s linear infinite',
+				'heart-burst': 'heart-burst 2.2s ease-out forwards',
+				'firefly': 'firefly 6s ease-in-out infinite',
+				'garland-glow': 'garland-glow 3s ease-in-out infinite'
 			}
 		}
 	},
